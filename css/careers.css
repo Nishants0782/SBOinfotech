@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    transition: all .2s linear;
+    text-decoration: none;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.heading, .clients .section-header h2, .section-head h1, .partner .section-header h2, .section-head-1 h4{
+    margin: 2rem;
+    padding-top: 6rem;
+    display: inline-block;
+    font-size: 3.5rem;
+    color: #002e5f;
+    position: relative;
+    letter-spacing: .2rem;
+}
+
+.heading::before, .heading::after, .clients .section-header h2::before, .clients .section-header h2::after, .section-head h1::before, .section-head h1::after, .partner .section-header h2::before, .partner .section-header h2::after, .section-head-1 h4::before, .section-head-1 h4::after{
+    content: '';
+    position: absolute;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-top: .4rem solid #002e5f;
+    border-left: .4rem solid #002e5f;
+}
+
+
+
+ .clients .section-header h2::before, .section-head h1::before, .partner .section-header h2::before, .section-head-1 h4::before{
+    top: 5.8rem;
+    left: -2rem;
+}
+ .heading::before{
+    top: 4.9rem;
+    left: -2rem;
+}
+.heading::after, .clients .section-header h2::after, .section-head h1::after, .partner .section-header h2::after, .section-head-1 h4::after{
+    bottom: -.5rem;
+    right: -2rem;
+    transform: rotate(180deg);
+}
+
+
+
+/* navbar  */
+
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem 2rem;
+    /* background: #002e5f; */
+    background-color: rgb(255, 255, 255 , 0.2);
+    backdrop-filter: blur(3px);
+    color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+/* General styling for the logo */
+.header .logo img {
+    max-width: 100%;   /* Ensures logo scales without overflowing */
+    height: auto;      /* Keeps aspect ratio intact */
+    width: auto;       /* Allows the width to scale naturally */
+  }
+   
+  /* Large screens (laptops, desktops) */
+  @media (min-width: 1200px) {
+    .header .logo img {
+      max-width: 15%;  /* Suitable for larger screens */
+    }
+  }
+  
+  /* Medium screens (medium laptops) */
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .header .logo img {
+      max-width: 18%;  /* Scaled for medium laptops */
+    }
+  }
+  
+  /* Tablets and smaller desktops */
+  @media (max-width: 991px) {
+    .header .logo img {
+      max-width: 25%;  /* Adjusted for tablets */
+    }
+  }
+  
+  /* iPhones and smaller devices */
+  @media (max-width: 768px) {
+    .header .logo img {
+      max-width: 30%;  /* Adjusted for iPhones and similar screens */
+    }
+  }
+  
+  /* Very small devices (older iPhones, small smartphones) */
+  @media (max-width: 480px) {
+    .header .logo img {
+      max-width: 50%;  /* Further adjustment for small screens */
+    }
+  }
+  
+  /* For very small phones (e.g., 320px width) */
+  @media (max-width: 320px) {
+    .header .logo img {
+      max-width: 60%;  /* Extremely small screens */
+    }
+  }
+  
+
+.header .navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* background: #002e5f; */
+    padding: 1rem;
+   
+}
+
+.header .navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  
+}
+
+.header .navbar ul li {
+    margin: 0 1.5rem;
+}
+
+.header .navbar ul li a {
+    font-size: 5rem;
+    color: #000000;
+    font-weight: bolder;
+    text-decoration: none;
+    transition: color 0.3s;
+ 
+}
+
+.header .navbar ul li a:hover {
+    color: #00bfff;
+}
+
+#menu-toggle {
+    display: none;
+    font-size: 2rem;
+    color: #000000;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .header .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #002e5f;
+        z-index: 99;
+    }
+
+    .header .navbar.active {
+        display: flex;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+
+    .header .navbar ul {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .header .navbar ul li {
+        margin: 1rem 0;
+        text-align: center;
+    }
+}
+
+
+.header .fa-bars{
+    color: #fff;
+    cursor: pointer;
+    font-size: 3rem;
+    display: none;
+}
+
+
+/* Home Page  */
+
+
+.home {
+    min-height: 100vh;
+    width: 100vw;
+    background-image: url(../images/p4.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 0 1rem;
+}
+
+.home-content {
+    color: #fff;
+    z-index: 1;
+}
+.overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    background-color:rgba(0,0,0,0.3);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.overlay h1{
+    font-size: 6rem;
+    margin-bottom: 1rem;
+    font-weight: 900;
+    color:white;
+}
+/* 
+.home h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+} */
+
+.home p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.home .btn {
+    background: #00bfff;
+    color: #fff;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.home .btn:hover {
+    background: #002e5f;
+}
+
+.wave-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* About Page  */
+
+.details-section {
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    height: 80vh; /* Set the height of the parent div */
+    align-items: center; /* Center align items vertically */
+  }
+  
+  .detail-box {
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 80%; /* Increase size of each box */
+  }
+  
+  .detail-box h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #0078D7;
+  }
+  
+  .detail-box p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .detail-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .details-section {
+      grid-template-columns: 1fr; /* Stack boxes in a single column */
+      height: auto; /* Allow height to adjust for smaller screens */
+    }
+  
+    .detail-box {
+      height: auto; /* Remove fixed height for stacked layout */
+      padding: 15px; /* Reduce padding for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .details-section {
+      width: 100%; /* Use full width on very small screens */
+    }
+  
+    .detail-box h3 {
+      font-size: 1.2rem; /* Adjust font size */
+    }
+  
+    .detail-box p {
+      font-size: 0.9rem;
+    }
+  }
+
+/* footer section */
+.footer {
+    background: #222;
+    color: #fff;
+    padding: 2rem 0;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-size: medium;
+}
+
+.footer-links, .footer-contact {
+    text-align: left;
+}
+
+.footer-links h4, .footer-contact h4 {
+    color: #00bfff;
+    margin-bottom: 1rem;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin: 0.5rem 0;
+}
+
+.footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links ul li a:hover {
+    text-decoration: underline;
+}
+.footer-contact{
+    text-align: center;
+
+}
+.footer-contact p {
+    margin: 0.5rem 0;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-links a {
+    text-align: center;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: medium;
+}
+
+.back-to-top {
+    position: fixed;
+    /* display: none; */
+    background-color: #00bfff;
+    border-radius: 50%;
+    color: #ffffff;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    line-height: 1;
+    font-size: 44px;
+    right: 15px;
+    bottom: 15px;
+    transition: background 0.3s;
+    z-index: 9;
+    padding: 33px;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-to-top i {
+    color: #ffffff;
+}
+
+.back-to-top i:hover {
+    color: black;
+}
